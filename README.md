@@ -4,6 +4,9 @@ Python sample codes for studying control engineering.
 # Table of Contents
 * [About this repository](#about-this-repository)  
 * [Requirements](#requirements)  
+* [How to use](#how-to-use)  
+* [License](#license)  
+* [Author](#author)  
 
 # About this repository
 This repository is a Python sample codes collection of control engineering.  
