@@ -4,8 +4,14 @@ Two wheel motion model sample
 author: Shisato Yano (@4310sy)
 """
 
-from control.matlab import *
 import numpy as np
+from math import cos, sin
+import matplotlib.pyplot as plt
+
+show_plot = True
+
+DELTA_TIME = 0.1 # time tick [s]
+SIM_TIME = 10 # simulation time [s]
 
 class TwoWheelModel:
 
@@ -20,20 +26,46 @@ class TwoWheelModel:
         self.tire_radius_m = tr
         self.tread_m = td
 
-    def calculate_input(self, tsr, tsl):
+    def calculate_input(self, tasr, tasl):
         """
-        tsr: tire speed right [m/s]
-        tsl: tire speed left [m/s]
+        tasr: tire angular speed right [rad/s]
+        tasl: tire angular speed left [rad/s]
+        :return: speed input [m/s], yaw rate input [rad/s]
         """
 
-        mat = np.ndarray([[self.tire_radius_m/2, self.tire_radius_m/2],
+        mat = np.array([[self.tire_radius_m/2, self.tire_radius_m/2],
                          [self.tire_radius_m/self.tread_m, -self.tire_radius_m/self.tread_m]])
 
-        vec = np.ndarray([[tsr], [tsl]])
+        vec = np.array([[tasr], [tasl]])
 
         input_vec = np.dot(mat, vec)
 
         return input_vec
+
+    def control_input(self, time):
+        if time <= 5.0:
+            tasr = 0.3 # [rad/s]
+            tasl = 0.1 # [rad/s]
+        else:
+            tasr = 0.1 # [rad/s]
+            tasl = 0.3 # [rad/s]
+
+        input_vec = self.calculate_input(tasr, tasl)
+
+        return input_vec
+
+    def output_equation(self, state, input):
+        out_mat = np.array([[1, 0, 0],
+                            [0, 1, 0],
+                            [0, 0, 1]])
+
+        dirc_mat = np.array([[cos(state[2, 0]) * DELTA_TIME, 0],
+                             [sin(state[2, 0]) * DELTA_TIME, 0],
+                             [0, 1]])
+
+        out_vec = np.dot(out_mat, state) + np.dot(dirc_mat, input)
+
+        return out_vec
 
 def main():
     print("Run " + __file__)
@@ -44,6 +76,46 @@ def main():
 
     # initialize
     two_wheel = TwoWheelModel(tire_radius_m, tread_m)
+
+    # elapsed time
+    time = 0.0
+
+    # state vector: x, y, yaw
+    st_vec = np.zeros((3, 1))
+
+    ax_xy = plt.subplot(1, 1, 1)
+    plt_xy, = ax_xy.plot([], [], '.', c='b', ms=10)
+
+    # simulation
+    st_x = []
+    st_y = []
+    st_yaw = []
+    while SIM_TIME >= time:
+        time += DELTA_TIME
+
+        input_vec = two_wheel.control_input(time)
+
+        st_vec = two_wheel.output_equation(st_vec, input_vec)
+
+        st_x.append(st_vec[0, 0])
+        st_y.append(st_vec[1, 0])
+        st_yaw.append(st_vec[2, 0])
+
+        if show_plot:
+            plt_xy.set_data(st_x, st_y)
+            ax_xy.set_xlim([-0.1, 0.1])
+            ax_xy.set_ylim([0.0, 0.1])
+            ax_xy.axis('equal')
+            ax_xy.grid(True)
+            plt.pause(0.001)
+
+    if show_plot:
+        plt.plot(st_x, st_y, ".b")
+        plt.grid(True)
+        plt.axis("equal")
+        plt.xlabel("X [m]")
+        plt.ylabel("Y [m]")
+        plt.show()
 
 if __name__ == '__main__':
     main()
