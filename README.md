@@ -26,7 +26,10 @@ I hope this repository will be useful for a lot of people to study control engin
 3. Execute python code in each directory.
 4. Add star to this repository if you like.
 
-# Sample code list
+# Sample code directories
+In each directories, you can see a simulation result quickly  
+by opening the gif file.  
+
 * [TwoWheelModel](TwoWheelModel)
 
 # License
