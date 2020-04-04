@@ -7,6 +7,8 @@ author: Shisato Yano (@4310sy)
 import numpy as np
 from math import cos, sin
 import matplotlib.pyplot as plt
+from PIL import Image
+import os
 
 show_plot = True
 
@@ -67,6 +69,17 @@ class TwoWheelModel:
 
         return out_vec
 
+    def create_gif(self, im_num):
+        images = []
+
+        for num in range(im_num):
+            im_name = str(num) + '.png'
+            im = Image.open(im_name)
+            images.append(im)
+            os.remove(im_name)
+
+        images[0].save('TwoWheelModel.gif', save_all=True, append_images=images[1:], loop=0, duration=60)
+
 def main():
     print("Run " + __file__)
 
@@ -83,8 +96,12 @@ def main():
     # state vector: x, y, yaw
     st_vec = np.zeros((3, 1))
 
+    # figure
     ax_xy = plt.subplot(1, 1, 1)
     plt_xy, = ax_xy.plot([], [], '.', c='b', ms=10)
+
+    # image number
+    im_num = 0
 
     # simulation
     st_x = []
@@ -107,7 +124,11 @@ def main():
             ax_xy.set_ylim([0.0, 0.1])
             ax_xy.axis('equal')
             ax_xy.grid(True)
+            plt.savefig(str(im_num) + '.png')
+            im_num += 1
             plt.pause(0.001)
+
+    two_wheel.create_gif(im_num)
 
     if show_plot:
         plt.plot(st_x, st_y, ".b")
