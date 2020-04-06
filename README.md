@@ -1,4 +1,7 @@
 # PythonControlPractice
+
+[![CodeFactor](https://www.codefactor.io/repository/github/shisatoyano/pythoncontrolpractice/badge)](https://www.codefactor.io/repository/github/shisatoyano/pythoncontrolpractice)
+
 Python sample codes for studying control engineering.
 
 # Table of Contents
