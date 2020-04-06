@@ -56,7 +56,7 @@ class TwoWheelModel:
 
         return input_vec
 
-    def output_equation(self, state, input):
+    def output_equation(self, state, input_vec):
         out_mat = np.array([[1, 0, 0],
                             [0, 1, 0],
                             [0, 0, 1]])
@@ -65,7 +65,7 @@ class TwoWheelModel:
                              [sin(state[2, 0]) * DELTA_TIME, 0],
                              [0, 1]])
 
-        out_vec = np.dot(out_mat, state) + np.dot(dirc_mat, input)
+        out_vec = np.dot(out_mat, state) + np.dot(dirc_mat, input_vec)
 
         return out_vec
 
@@ -140,4 +140,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    
