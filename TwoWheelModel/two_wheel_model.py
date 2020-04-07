@@ -128,7 +128,8 @@ def main():
             im_num += 1
             plt.pause(0.001)
 
-    two_wheel.create_gif(im_num)
+    if im_num > 0:
+        two_wheel.create_gif(im_num)
 
     if show_plot:
         plt.plot(st_x, st_y, ".b")
