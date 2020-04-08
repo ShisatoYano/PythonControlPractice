@@ -22,6 +22,7 @@ before_install:
 install:
   - conda install numpy
   - conda install matplotlib
+  - conda install pillow
   - conda install coveralls
 
 script:
