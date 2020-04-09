@@ -24,8 +24,7 @@ install:
   - conda install matplotlib
   - conda install pillow
   - conda install coveralls
-  - conda uninstall coverage
-  - conda install coverage==4.5.4
+  - conda update --all
 
 script:
   - python --version
