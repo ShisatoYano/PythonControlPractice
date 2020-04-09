@@ -30,4 +30,5 @@ script:
   - ./run_tests.sh
 
 after_success:
+  - coverage report -m
   - coveralls
