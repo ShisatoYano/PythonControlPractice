@@ -23,8 +23,7 @@ install:
   - conda install numpy
   - conda install matplotlib
   - conda install pillow
-  - conda install coveralls
-  - conda update --all
+  - conda install coveralls==1.8.1
 
 script:
   - python --version
