@@ -24,11 +24,12 @@ install:
   - conda install matplotlib
   - conda install pillow
   - conda install coveralls
+  - conda uninstall coverage
+  - conda install coverage==4.5.4
 
 script:
   - python --version
   - ./run_tests.sh
 
 after_success:
-  - coverage report -m
   - coveralls
