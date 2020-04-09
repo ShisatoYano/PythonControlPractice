@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-echo "Unit tests start!!"
+echo "Tests suites start!!"
 coverage run -m unittest discover tests
