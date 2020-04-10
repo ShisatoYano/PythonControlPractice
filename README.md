@@ -3,8 +3,9 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/shisatoyano/pythoncontrolpractice/badge)](https://www.codefactor.io/repository/github/shisatoyano/pythoncontrolpractice)
 [![Build Status](https://travis-ci.com/ShisatoYano/PythonControlPractice.svg?branch=master)](https://travis-ci.com/ShisatoYano/PythonControlPractice)
 [![Coverage Status](https://coveralls.io/repos/github/ShisatoYano/PythonControlPractice/badge.svg?branch=master)](https://coveralls.io/github/ShisatoYano/PythonControlPractice?branch=master)
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/ShisatoYano/PythonControlPractice.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/ShisatoYano/PythonControlPractice/alerts/)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/ShisatoYano/PythonControlPractice.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/ShisatoYano/PythonControlPractice/alerts/)  
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/ShisatoYano/PythonControlPractice.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/ShisatoYano/PythonControlPractice/context:python)
+[![Build status](https://ci.appveyor.com/api/projects/status/sw6nn7yddmbr37xs?svg=true)](https://ci.appveyor.com/project/ShisatoYano/pythoncontrolpractice)
 
 Python sample codes for studying control engineering.
 
