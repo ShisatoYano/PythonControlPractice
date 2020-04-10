@@ -24,6 +24,7 @@ I hope this repository will be useful for a lot of people to study control engin
 * Python 3.7.x (2.x is not supported)
 * numpy
 * matplotlib
+* pillow
 
 # How to use
 1. Clone this repository.
