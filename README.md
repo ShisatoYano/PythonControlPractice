@@ -3,6 +3,7 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/shisatoyano/pythoncontrolpractice/badge)](https://www.codefactor.io/repository/github/shisatoyano/pythoncontrolpractice)
 [![Build Status](https://travis-ci.com/ShisatoYano/PythonControlPractice.svg?branch=master)](https://travis-ci.com/ShisatoYano/PythonControlPractice)
 [![Coverage Status](https://coveralls.io/repos/github/ShisatoYano/PythonControlPractice/badge.svg?branch=master)](https://coveralls.io/github/ShisatoYano/PythonControlPractice?branch=master)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/ShisatoYano/PythonControlPractice.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/ShisatoYano/PythonControlPractice/alerts/)
 
 Python sample codes for studying control engineering.
 
