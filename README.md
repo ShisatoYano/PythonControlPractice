@@ -9,7 +9,7 @@
 
 Python sample codes for studying control engineering.
 
-# Table of Contents
+# Table of contents
 * [About this repository](#about-this-repository)  
 * [Requirements](#requirements)  
 * [How to use](#how-to-use)  
