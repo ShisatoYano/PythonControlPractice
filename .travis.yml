@@ -23,6 +23,7 @@ install:
   - conda install numpy
   - conda install matplotlib
   - conda install pillow
+  - conda install -c conda-forge control slycot
   - conda install coveralls==1.8.1
 
 script:
