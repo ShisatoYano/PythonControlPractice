@@ -24,13 +24,6 @@ def define_state_space_model(A, B, C, D):
     if show_result:
         print('State space model')
         print(ss_model)
-    return ss_model
-
-def convert_transfer_function_model(ss_model):
-    tf_model = ss2tf(ss_model)
-    if show_result:
-        print('Transfer function model')
-        print(tf_model)
 
 def check_controllability(A, B):
     cntrb_mat = ctrb(A, B)
@@ -64,9 +57,7 @@ def main():
 
     D = 0
 
-    ss_model = define_state_space_model(A, B, C, D)
-
-    convert_transfer_function_model(ss_model)
+    define_state_space_model(A, B, C, D)
 
     check_controllability(A, B)
 
