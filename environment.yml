@@ -6,6 +6,3 @@ dependencies:
   - numpy
   - pillow
   - coverage
-  - conda-forge
-  - control
-  - slycot
