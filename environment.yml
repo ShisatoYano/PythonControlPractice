@@ -6,5 +6,5 @@ dependencies:
   - numpy
   - pillow
   - coverage
-pip:
-  - slycot
+  - pip:
+      - slycot
