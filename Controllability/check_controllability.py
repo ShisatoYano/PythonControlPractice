@@ -15,7 +15,7 @@ author: Shisato Yano (@4310sy)
 """
 
 import numpy as np
-from control.matlab import *
+from control.matlab import ss, ss2tf, ctrb
 
 show_result = True
 
