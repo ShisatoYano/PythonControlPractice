@@ -35,7 +35,6 @@ install:
   - conda update -q conda
   - conda info -a
   - conda env create -f C:\\projects\pythoncontrolpractice\environment.yml
-#  - conda install -c conda-forge control slycot
   - activate python_control_practice
 
   # Check that we have the expected version and architecture for Python
