@@ -40,6 +40,7 @@ by opening the gif file.
 
 * [TwoWheelModel](TwoWheelModel)
 * [Controllability](Controllability)
+* [Observability](Observability)
 
 # License
 All of codes in this repository are released under the MIT License.  
