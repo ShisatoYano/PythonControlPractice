@@ -17,27 +17,23 @@ author: Shisato Yano (@4310sy)
 import numpy as np
 from control.matlab import ss, ctrb
 
-show_result = True
-
 def define_state_space_model(A, B, C, D):
     ss_model = ss(A, B, C, D)
-    if show_result:
-        print('State space model')
-        print(ss_model)
+    print('State space model')
+    print(ss_model)
 
 def check_controllability(A, B):
     cntrb_mat = ctrb(A, B)
     rank = np.linalg.matrix_rank(cntrb_mat)
-    if show_result:
-        print('Controllability matrix')
-        print(cntrb_mat)
-        print('')
-        print('Rank is', rank)
-        print('')
-        if rank != A.shape[0]:
-            print('This system is not controllability\n')
-        else:
-            print('This system is controllability\n')
+    print('Controllability matrix')
+    print(cntrb_mat)
+    print('')
+    print('Rank is', rank)
+    print('')
+    if rank != A.shape[0]:
+        print('This system is not controllability\n')
+    else:
+        print('This system is controllability\n')
 
 def main():
     print("Run " + __file__)
