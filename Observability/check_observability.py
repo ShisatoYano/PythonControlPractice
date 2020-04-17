@@ -17,27 +17,23 @@ author: Shisato Yano (@4310sy)
 import numpy as np
 from control.matlab import ss, obsv
 
-show_result = True
-
 def define_state_space_model(A, B, C, D):
     ss_model = ss(A, B, C, D)
-    if show_result:
-        print('State space model')
-        print(ss_model)
+    print('State space model')
+    print(ss_model)
 
 def check_observability(A, C):
     obsv_mat = obsv(A, C)
     rank = np.linalg.matrix_rank(obsv_mat)
-    if show_result:
-        print('Observability matrix')
-        print(obsv_mat)
-        print('')
-        print('Rank is', rank)
-        print('')
-        if rank != A.shape[0]:
-            print('This system is not observability\n')
-        else:
-            print('This system is observability\n')
+    print('Observability matrix')
+    print(obsv_mat)
+    print('')
+    print('Rank is', rank)
+    print('')
+    if rank != A.shape[0]:
+        print('This system is not observability\n')
+    else:
+        print('This system is observability\n')
 
 def main():
     print("Run " + __file__)
