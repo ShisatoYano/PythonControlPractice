@@ -46,11 +46,11 @@ class TwoWheelModel:
 
     def control_input(self, time):
         if time <= 5.0:
-            tasr = 0.3 # [rad/s]
+            tasr = 0.6 # [rad/s]
             tasl = 0.1 # [rad/s]
         else:
             tasr = 0.1 # [rad/s]
-            tasl = 0.3 # [rad/s]
+            tasl = 0.6 # [rad/s]
 
         input_vec = self.calculate_input(tasr, tasl)
 
@@ -63,7 +63,7 @@ class TwoWheelModel:
 
         dirc_mat = np.array([[cos(state[2, 0]) * DELTA_TIME, 0],
                              [sin(state[2, 0]) * DELTA_TIME, 0],
-                             [0, 1]])
+                             [0, DELTA_TIME]])
 
         out_vec = np.dot(out_mat, state) + np.dot(dirc_mat, input_vec)
 
@@ -99,6 +99,11 @@ def main():
     # figure
     ax_xy = plt.subplot(1, 1, 1)
     plt_xy, = ax_xy.plot([], [], '.', c='b', ms=10)
+    ax_xy.set_xlim([0.0, 0.26])
+    ax_xy.set_ylim([-0.05, 0.15])
+    ax_xy.set_xlabel("X [m]")
+    ax_xy.set_ylabel("Y [m]")
+    ax_xy.grid(True)
 
     # image number
     im_num = 0
@@ -120,10 +125,6 @@ def main():
 
         if show_plot:
             plt_xy.set_data(st_x, st_y)
-            ax_xy.set_xlim([-0.1, 0.1])
-            ax_xy.set_ylim([0.0, 0.1])
-            ax_xy.axis('equal')
-            ax_xy.grid(True)
             plt.savefig(str(im_num) + '.png')
             im_num += 1
             plt.pause(0.001)
