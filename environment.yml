@@ -7,5 +7,5 @@ dependencies:
   - pillow
   - coverage
   - pip:
-      - slycot-0.3.3-cp38-cp38-win_amd64.whl
+      - c:\slycot-0.3.3-cp38-cp38-win_amd64.whl
       - control
