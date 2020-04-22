@@ -31,11 +31,16 @@ install:
   # done from inside the powershell script as it would require to restart
   # the parent CMD process).
   - "SET PATH=%MINICONDA%;%MINICONDA%\\Scripts;%PATH%"
-  - conda config --set always_yes yes --set changeps1 no
-  - conda update -q conda
-  - conda info -a
-  - conda env create -f C:\\projects\pythoncontrolpractice\environment.yml
-  - activate python_control_practice
+  - "conda config --set always_yes yes --set changeps1 no"
+  - "conda update -q conda"
+  - "conda info -a"
+#  - conda env create -f C:\\projects\pythoncontrolpractice\environment.yml
+#  - activate python_control_practice
+  - "conda install numpy"
+  - "conda install matplotlib"
+  - "conda install pillow"
+  - "conda install -c conda-forge control slycot"
+  - "conda install coveralls==1.8.1"
 
   # Check that we have the expected version and architecture for Python
   - "python --version"
