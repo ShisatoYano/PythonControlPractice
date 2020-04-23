@@ -45,10 +45,9 @@ install:
   # Check that we have the expected version and architecture for Python
   - "python --version"
   - "python -c \"import struct; print(struct.calcsize('P') * 8)\""
-  - "python check.py"
-  - "conda list -p C:\\Miniconda37-x64"
 
 build: false
 
 test_script:
+  - "python check.py"
   - "python -Wignore -m unittest discover tests"
