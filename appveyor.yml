@@ -49,5 +49,4 @@ install:
 build: false
 
 test_script:
-  - "python check.py"
   - "python -Wignore -m unittest discover tests"
