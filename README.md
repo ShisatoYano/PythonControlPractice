@@ -39,6 +39,7 @@ by opening the gif file.
 
 * [TwoWheelModel](TwoWheelModel)
 * [Controllability](Controllability)
+* [TransferFunction](TransferFunction)
 * [Observability](Observability)
 
 # License
