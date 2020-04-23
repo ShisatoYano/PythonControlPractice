@@ -26,6 +26,7 @@ I hope this repository will be useful for a lot of people to study control engin
 * matplotlib
 * pillow
 * control
+* slycot
 
 # How to use
 1. Clone this repository.
